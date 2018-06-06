@@ -15,16 +15,20 @@ var pigLatin = function(word)
     }
   }
 
-  for (index = 1; index < theInput.length; index++)
+/////// LOOK FOR BEGINNNING CONSONANTS. REMOVE-ADD THEM TO END. END STRING WITH "ay"
+  for (index = 1; index < theInput.length; index++)//loop through string (theInput)
   {
-    for (var i = 0; i < vowelsArray.length; i++)
+    for (var i = 0; i < vowelsArray.length; i++)//loop through vowels
     {
-      var dummyArray = [];
-      if (theInput[index] === vowelsArray[i])
+      if (theInput[index] === vowelsArray[i])//check for vowel
       {
-        theInput.push(theInput[(index-1)] + "way");
-        theInput.splice(0, index);
-        var theResult = theInput.join("");
+        for (var j = 0; j <= (index-1); j++)//loop through string again
+        {
+          theInput.push(theInput[j]);//push each letter one at a time until vowel is reached.
+        }
+        theInput.push("ay");// add "ay" to end of string
+        theInput.splice(0, index);//remove letters up to vowel (index position from for loop)
+        var theResult = theInput.join("");//combine array elements into a string
         return theResult;
       }
     }

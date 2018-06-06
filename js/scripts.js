@@ -17,8 +17,10 @@ var pigLatinWord = function(word)
       return theResult;
     }
   }
+
+
 /////// LOOK FOR BEGINNNING CONSONANTS. REMOVE-ADD THEM TO END. END STRING WITH "ay"
-  for (index = 1; index < theInput.length; index++)//loop through string (theInput)
+  for (index = 0; index < theInput.length; index++)//loop through string (theInput)
   {
     for (var i = 0; i < vowelsArray.length; i++)//loop through vowels
     {
